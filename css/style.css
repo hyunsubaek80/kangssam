@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+html,body {
+	width: 100%;
+	min-height: 100%;
+}
+.container {
+	width:100%;
+	min-height:100vh;
+	border: 1px solid #000;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+}
+.cont1{
+	flex: 1 0 33%;
+	max-width: 33%;
+	background: #e60012;
+	display: flex;
+	flex-direction: column;
+}
+.cont1_col_top {
+	padding:20px 45px 0 45px;
+}
+.cont1_col_top img {width:100%;}
+
+.cont1_col_bottom{
+	padding:0 50px;
+	display: flex;
+	flex-direction: column;
+	letter-spacing: -0.5px;
+}
+.col_m {
+	font-size:32px; color: #fff; padding:0 20px;
+}
+.col_m2 { background:#fff; color:red; margin:10px 0px 20px 0px; padding:4px 20px 8px 20px; width:100%; font-size:36px;}
+.col_m span:last-child, .col_m2 span:last-child{float: right; font-weight: 700; letter-spacing: -1px;}
+.cont2{
+	flex: 2;
+	background:#000;
+}
+/* 1400이하일 때 */
+@media screen and (max-width: 1400px) {
+	.container{
+		flex-direction: column-reverse;
+	}
+	.cont1{
+		max-width:100%;
+		flex-direction: row;
+	}
+	.cont1_col_top{ width:33%; padding:20px;}
+	.cont1_col_bottom {padding:20px 40px 0 40px; flex:1;}
+	.col_m { padding:0 10px 5px 10px;}
+	.col_m2 {font-size: clamp(18px, 2.4vw, 36px);}
+}
+
+/* 768이하일 때 */
+@media screen and (max-width: 768px) {
+	.cont1_col_top{ width:33%; padding:20px;}
+	.cont1_col_bottom {padding:20px 20px 0 20px; flex:1;}
+	.col_m {font-size: clamp(16px, 1.8vw, 24px);}
+	.col_m2 {font-size: clamp(18px, 2.4vw, 36px);}
+}
+
+
+/* 1920 이상일 때 */
+@media screen and (min-width: 1920px) {
+	.col_m {font-size:48px;}
+	.col_m2 {font-size:56px;}
+	
+}
