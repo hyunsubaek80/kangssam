@@ -56,7 +56,6 @@ html,body {
 	.cont1_col_top{ width:33%; padding:20px;}
 	.cont1_col_bottom {padding:20px 40px 0 40px; flex:1;}
 	.col_m { padding:0 10px 5px 10px;}
-	.col_m2 {font-size: clamp(18px, 2.4vw, 36px);}
 }
 
 /* 768이하일 때 */
