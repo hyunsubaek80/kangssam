@@ -63,8 +63,8 @@ html,body {
 @media screen and (max-width: 768px) {
 	.cont1_col_top{ width:33%; padding:20px;}
 	.cont1_col_bottom {padding:20px 20px 0 20px; flex:1;}
-	.col_m {font-size: clamp(16px, 1.8vw, 24px);}
-	.col_m2 {font-size: clamp(18px, 2.4vw, 36px);}
+	.col_m {font-size: clamp(20px, 2vw, 24px);}
+	.col_m2 {font-size: clamp(24px, 2.4vw, 36px);}
 }
 
 
