@@ -22,22 +22,46 @@ html,body {
 	background: #e60012;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	position: relative;
 }
+.cont1_col_wrapper {
+	position: absolute;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	z-index:1;
+}
+.gap160 {height:120px; display: block;}
+
 .cont1_col_top {
+	position: sticky;
+	display: flex;
+	justify-content: center;
 	padding:20px 45px 0 45px;
 }
-.cont1_col_top img {width:100%;}
+.cont1_col_top img {width:100%; max-width:600px;}
 
 .cont1_col_bottom{
-	padding:0 50px;
 	display: flex;
+	z-index: 2;
+	left:0;
+	bottom: 0;
+	padding:0 50px;
 	flex-direction: column;
 	letter-spacing: -0.5px;
+}
+.fixman {display: flex; justify-content: center;}
+.fixman img {padding:0; margin:0; width:100%; display: block; max-width:380px;}
+.price_title {
+	border-top:1px solid rgba(255, 255, 255, .5); border-bottom:1px solid rgba(255, 255, 255, .5); text-align: center; font-size: 48px; color:#fff; font-weight: 800; letter-spacing: -1px; padding:0px 0 5px 0;
 }
 .col_m {
 	font-size:32px; color: #fff; padding:0 10px; display: flex; justify-content: space-between;
 }
-.col_m2 { background:#fff; color:red; margin:10px 0px 20px 0px; display: flex; justify-content: space-between; padding:4px 10px 8px 10px; width:100%; font-size:36px;}
+.col_m2 { background:#fff; color:red; margin:10px 0px 20px 0px; display: flex; justify-content: space-between; padding:4px 10px 8px 25px; width:100%; font-size:36px;}
 .col_m span:last-child, .col_m2 span:last-child{text-align: right; font-weight: 700; letter-spacing: -1px;}
 .cont2{
 	flex: 2;
@@ -55,16 +79,18 @@ html,body {
     height: 100%; /* .cont2의 전체 높이만큼 가짜 영역을 확보 */
     pointer-events: none; /* 뒤에 있는 이미지나 텍스트가 클릭되도록 클릭 이벤트 통과 */
     z-index: 10;
+	
 }
 .navi_content {
     position: -webkit-sticky;
     position: sticky;
     top: 10px;          /* 화면 상단에서 20px 떨어졌을 때 고정 */
     width: 100%;        /* 필요에 따라 너비 지정 (예: 200px 등) */
-    display: inline-block;
-	border-bottom: 1px solid #ddd;
+    display: flex;
+	justify-content: space-between;
     padding:0 0 10px 30px;
     pointer-events: auto; /* 내비게이션 버튼 등은 다시 클릭이 되어야 하므로 마우스 이벤트 복구 */
+	border-bottom: 1px solid #ddd;
     
 }
 .cont2_top{color:#ff6600; display: flex; justify-content: center; align-items: center; flex: 2;}
@@ -76,6 +102,7 @@ html,body {
 	padding-left:50px;
 	display: flex;
 	flex-direction: column;
+	gap: 20px;
 }
 .prod1 { letter-spacing: -1px; position: absolute; bottom:30px;}
 .prod1 span:first-child { font-size: 38px; font-weight: 700; display: block;}
@@ -84,12 +111,13 @@ html,body {
 .prod2 span:first-child { font-size: 34px; font-weight: 500; display: block;}
 .prod2 span:last-child { font-size: 100px; font-weight: 800; display: block; color: #e60012; line-height: 1; letter-spacing: -2px;}
 
-/* 768이하일 때 */
-@media screen and (max-width: 768px) {
-	.cont1_col_top{ width:33%; padding:20px;}
-	.cont1_col_bottom {padding:20px 20px 0 20px; flex:1;}
-	.col_m {font-size: 36px}
-	.col_m2 {font-size: 44px}
+/* 1920 이상일 때 */
+@media screen and (min-width: 1920px) {
+	.col_m {font-size:48px;}
+	.col_m2 {font-size:56px;}
+	.price_title{font-size: 64px;}
+	.fixman img {max-width:500px;}
+	
 }
 
 /* 1400이하일 때 */
@@ -99,19 +127,39 @@ html,body {
 		align-items: flex-end;
 	}
 	.cont1{
+		width: 100%;
 		max-width:100%;
 		flex-direction: row;
-		flex: auto;
 	}
 	.cont1_col_top{ width:33%; padding:20px;}
-	.cont1_col_bottom {padding:20px 40px 0 40px; flex:1;}
+	.cont1_col_bottom {padding:20px 40px 0 40px; flex:1; margin-left:33%;}
 	.col_m { padding:0 10px 5px 10px;}
+	.cont2 {width:100%;}
+	.fixman{display: none;}
+	.price_title {border-top: none; text-align: left; margin-bottom: 15px;}
 }
 
-
-/* 1920 이상일 때 */
-@media screen and (min-width: 1920px) {
-	.col_m {font-size:48px;}
-	.col_m2 {font-size:56px;}
-	
+/* 1024이하일 때 */
+@media screen and (max-width: 1024px) {
+	.prod1 span:first-child { font-size: 30px;}
+	.prod1 span:last-child { font-size: 22px;}
+	.prod2 span:first-child { font-size: 28px;}
+	.prod2 span:last-child { font-size: 60px;}
+	.cont1_col_bottom {padding:20px;}
+	.price_title{font-size: 40px;}
+	.col_m {font-size: 24px}
+	.col_m2 {font-size: 28px;}
 }
+
+/* 768이하일 때 */
+@media screen and (max-width: 768px) {
+	.prod_wrap{padding-left:20px;}
+	.prod1 span:first-child { font-size: 20px;}
+	.prod1 span:last-child { font-size: 16px;}
+	.prod2 span:first-child { font-size: 18px;}
+	.prod2 span:last-child { font-size: 30px;}
+	.price_title{font-size: 30px;}
+	.col_m {font-size: 20px}
+	.col_m2 {font-size: 24px; padding:0px 10px 4px 15px;}
+}
+
