@@ -12,7 +12,6 @@ html,body {
 .container {
 	width:100%;
 	min-height:100vh;
-	border: 1px solid #000;
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
@@ -58,6 +57,14 @@ html,body {
 	flex-direction: row;
 }
 
+/* 768이하일 때 */
+@media screen and (max-width: 768px) {
+	.cont1_col_top{ width:33%; padding:20px;}
+	.cont1_col_bottom {padding:20px 20px 0 20px; flex:1;}
+	.col_m {font-size: 36px}
+	.col_m2 {font-size: 44px}
+}
+
 /* 1400이하일 때 */
 @media screen and (max-width: 1400px) {
 	.container{
@@ -72,14 +79,6 @@ html,body {
 	.cont1_col_top{ width:33%; padding:20px;}
 	.cont1_col_bottom {padding:20px 40px 0 40px; flex:1;}
 	.col_m { padding:0 10px 5px 10px;}
-}
-
-/* 768이하일 때 */
-@media screen and (max-width: 768px) {
-	.cont1_col_top{ width:33%; padding:20px;}
-	.cont1_col_bottom {padding:20px 20px 0 20px; flex:1;}
-	.col_m {font-size: 36px}
-	.col_m2 {font-size: 44px}
 }
 
 
