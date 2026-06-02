@@ -1,9 +1,17 @@
+
 @charset "utf-8";
-/* CSS Document */
-*{
-	padding:0;
-	margin:0;
-	box-sizing: border-box;
+
+/* ===================================================
+   1. 프리텐다드(Pretendard) 웹폰트 불러오기 및 초기화
+   =================================================== */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* 프리텐다드 폰트를 전체 적용합니다. 만약 폰트 로드가 안 될 경우 시스템 고딕을 띄웁니다. */
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
 }
 html,body {
 	width: 100%;
