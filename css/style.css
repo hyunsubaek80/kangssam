@@ -35,26 +35,34 @@ html,body {
 	letter-spacing: -0.5px;
 }
 .col_m {
-	font-size:32px; color: #fff; padding:0 20px;
+	font-size:32px; color: #fff; padding:0 10px; display: flex; justify-content: space-between;
 }
-.col_m2 { background:#fff; color:red; margin:10px 0px 20px 0px; padding:4px 20px 8px 20px; width:100%; font-size:36px;}
-.col_m span:last-child, .col_m2 span:last-child{float: right; font-weight: 700; letter-spacing: -1px;}
+.col_m2 { background:#fff; color:red; margin:10px 0px 20px 0px; display: flex; justify-content: space-between; padding:4px 10px 8px 10px; width:100%; font-size:36px;}
+.col_m span:last-child, .col_m2 span:last-child{text-align: right; font-weight: 700; letter-spacing: -1px;}
 .cont2{
 	flex: 2;
 	padding:0;
 	margin: 0;
+	display: flex;
+	flex-direction: column;
+	position: relative;
 }
-.cont2_top{color:#ff6600;}
-.cont2_top img {width:100%;}
+.cont2_top{color:#ff6600; display: flex; justify-content: center; align-items: center; flex: 2;}
+.cont2_top img {width:100%; max-width: 1280px;}
 .cont2_bottom {
-	position: absolute;
-	bottom: 0;
 	width:100%;
 }
 .prod_wrap{
+	padding-left:50px;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
+.prod1 { letter-spacing: -1px; position: absolute; bottom:30px;}
+.prod1 span:first-child { font-size: 38px; font-weight: 700; display: block;}
+.prod1 span:last-child { font-size: 30px; font-weight: 400; display: block;}
+.prod2 { letter-spacing: -1px; position: absolute; right:30px; bottom:30px; text-align: right;}
+.prod2 span:first-child { font-size: 38px; font-weight: 400; display: block;}
+.prod2 span:last-child { font-size: 100px; font-weight: 800; display: block; color: #e60012; line-height: 1; letter-spacing: -1.8px;}
 
 /* 768이하일 때 */
 @media screen and (max-width: 768px) {
