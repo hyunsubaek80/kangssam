@@ -13,10 +13,77 @@
     /* 프리텐다드 폰트를 전체 적용합니다. 만약 폰트 로드가 안 될 경우 시스템 고딕을 띄웁니다. */
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
 }
+/* <a> 태그 기본값 스타일 변경 (컬러 #000, 밑줄 제거) */
+a {
+    color: #000;
+    text-decoration: none;
+}
 html,body {
 	width: 100%;
 	min-height: 100%;
 }
+.list_wrap{
+	background: #f3f3f3;
+	width: 100%;
+	min-height: 100vh;
+}
+.cont_header {
+	background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url("../img/Faucet.png");
+	background-size: cover;
+	background-position: bottom;
+	height:400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cont_header h1 {font-size: 80px; color:#fff; text-align: center;}
+.cont_header h1 span {display: block; font-size: 32px; font-weight: 400;}
+.item_wrapper {
+    display: flex;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    gap: 20px; 
+}
+
+.item_wrapper > a {
+    width: calc((100% - 60px) / 4); 
+    display: block;
+}
+
+.item {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+        0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* 부모인 <a> 태그 너비에 꽉 차게 설정 */
+    padding: 20px;
+	
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+                box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform, box-shadow; /* 브라우저 최적화 */
+}
+.item:hover {
+    /* 위로 8px 부드럽게 이동 */
+    transform: translateY(-8px); 
+    
+    /* 공중에 떴을 때의 자연스럽고 깊어진 그림자 */
+    box-shadow: 
+        0 20px 35px -10px rgba(0, 0, 0, 0.12), 
+        0 10px 20px -10px rgba(0, 0, 0, 0.06);
+}
+.item img {}
+.item span {letter-spacing: -1px; font-size:18px; color:#666; text-align: center; line-height: 1.6;}
+.item span:last-child {font-size:24px; font-weight: 800; color:#333;}
+
 .container {
 	width:100%;
 	min-height:100vh;
@@ -92,15 +159,20 @@ html,body {
 .navi_content {
     position: -webkit-sticky;
     position: sticky;
-    top: 10px;          /* 화면 상단에서 20px 떨어졌을 때 고정 */
+    top: 0;          /* 화면 상단에서 20px 떨어졌을 때 고정 */
     width: 100%;        /* 필요에 따라 너비 지정 (예: 200px 등) */
     display: flex;
 	justify-content: space-between;
-    padding:0 0 10px 30px;
     pointer-events: auto; /* 내비게이션 버튼 등은 다시 클릭이 되어야 하므로 마우스 이벤트 복구 */
 	border-bottom: 1px solid #ddd;
     
 }
+.inner_navi {padding: 14px 0 0 20px;}
+.btn_home {width:50px; padding:10px; display: flex; justify-content: center; border-left:1px solid #ddd; font-size: 20px;}
+.btn_home:hover {
+	background: rgba(0,0,0,.12);
+}
+
 .cont2_top{color:#ff6600; display: flex; justify-content: center; align-items: center; flex: 2;}
 .cont2_top img {width:100%; max-width: 1280px;}
 .cont2_bottom {
@@ -118,6 +190,8 @@ html,body {
 .prod2 { letter-spacing: -1px; position: absolute; right:30px; bottom:30px; text-align: right;}
 .prod2 span:first-child { font-size: 34px; font-weight: 500; display: block;}
 .prod2 span:last-child { font-size: 100px; font-weight: 800; display: block; color: #e60012; line-height: 1; letter-spacing: -2px;}
+
+
 
 /* 1920 이상일 때 */
 @media screen and (min-width: 1920px) {
@@ -145,12 +219,18 @@ html,body {
 	.cont2 {width:100%;}
 	.fixman{display: none;}
 	.price_title {border-top: none; text-align: left; margin-bottom: 15px;}
+	
+.item_wrapper > a {
+    width: calc((100% - 40px) / 3); 
+    display: block;
+}
 }
 
 /* 1024이하일 때 */
 @media screen and (max-width: 1024px) {
 	.prod1 span:first-child { font-size: 30px;}
 	.prod1 span:last-child { font-size: 22px;}
+	.prod2 {right:20px;}
 	.prod2 span:first-child { font-size: 28px;}
 	.prod2 span:last-child { font-size: 60px;}
 	.cont1_col_bottom {padding:20px;}
@@ -165,9 +245,13 @@ html,body {
 	.prod1 span:first-child { font-size: 20px;}
 	.prod1 span:last-child { font-size: 16px;}
 	.prod2 span:first-child { font-size: 18px;}
-	.prod2 span:last-child { font-size: 30px;}
+	.prod2 span:last-child { font-size: 40px;}
 	.price_title{font-size: 30px;}
 	.col_m {font-size: 20px}
 	.col_m2 {font-size: 24px; padding:0px 10px 4px 15px;}
+.item_wrapper > a {
+    width: calc((100% - 20px) / 2); 
+    display: block;
+}
 }
 
