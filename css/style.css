@@ -337,6 +337,14 @@ html,body {
 
 /* 768이하일 때 */
 @media screen and (max-width: 768px) {
+	
+	.header { height:66px;}
+	.header .logo { padding-top:10px;}
+	.header .logo img { height: 40px;}
+	
+	.header .menu {padding-top:25px;}
+	.header .menu li{font-size:16px; padding:0 10px;}
+	
 	.cont1 {flex: 0 0 250px}
 	.prod_wrap{padding-left:20px;}
 	.prod1 span:first-child { font-size: 20px;}
