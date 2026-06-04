@@ -87,15 +87,19 @@ html,body {
 .item span:last-child {font-size:24px; font-weight: 800; color:#333;}
 
 .container {
-	width:100%;
-	min-height:100vh;
+	width: 100%;
+	height: 100vh;          /* min-height 대신 딱 100vh로 고정 */
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
+	overflow: hidden;        /* 전체 화면 밖으로 스크롤이 나가는 것을 방지 */
 }
-.cont1{
-	flex: 1 0 33%;
-	max-width: 33%;
+
+/* 2. 왼쪽 영역은 100vh 안에서 절대 늘어나지 않도록 고정합니다 */
+.cont1 {
+	flex: 0 0 450px;          /* 1 0 33% 에서 flex-grow를 0으로 변경 */
+	max-width: 450px;
+	height: 100%;           /* 부모(100vh) 높이를 그대로 채움 */
 	background: #e60012;
 	display: flex;
 	flex-direction: column;
@@ -103,6 +107,7 @@ html,body {
 	align-items: stretch;
 	position: relative;
 }
+
 .cont1_col_wrapper {
 	position: absolute;
 	left:0;
@@ -131,22 +136,27 @@ html,body {
 	letter-spacing: -0.5px;
 }
 .fixman {display: flex; justify-content: center;}
-.fixman img {padding:0; margin:0; width:100%; display: block; max-width:380px;}
+.fixman img {padding:0; margin:0; width:100%; display: block; max-width:320px;}
 .price_title {
-	border-top:1px solid rgba(255, 255, 255, .5); border-bottom:1px solid rgba(255, 255, 255, .5); text-align: center; font-size: 48px; color:#fff; font-weight: 800; letter-spacing: -1px; padding:0px 0 5px 0;
+	border-top:1px solid rgba(255, 255, 255, .5); border-bottom:1px solid rgba(255, 255, 255, .5); text-align: center; font-size: 44px; color:#fff; font-weight: 800; letter-spacing: -1px; padding:5px 0 5px 0;
 }
 .col_m {
-	font-size:32px; color: #fff; padding:0 10px; display: flex; justify-content: space-between;
+	font-size:28px; color: #fff; padding:5px 10px 5px 0; display: flex; justify-content: space-between;
 }
-.col_m2 { background:#fff; color:red; margin:10px 0px 20px 0px; display: flex; justify-content: space-between; padding:4px 10px 8px 25px; width:100%; font-size:36px;}
+.col_m2 { background:#fff; color:red; margin:10px 0px 20px 0px; display: flex; justify-content: space-between; padding:6px 10px 8px 15px; width:100%; font-size:32px;}
 .col_m span:last-child, .col_m2 span:last-child{text-align: right; font-weight: 700; letter-spacing: -1px;}
-.cont2{
+
+/* 1. 오른쪽 전체 영역 */
+.cont2 {
 	flex: 2;
-	padding:0;
+	height: 100%;           
+	padding: 0;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
 	position: relative;
+	/* 크롬에서 자식 요소들의 높이 계산 오류를 방지하기 위해 지정 */
+	min-height: 0; 
 }
 .detail_navi {
 	position: absolute;
@@ -175,34 +185,64 @@ html,body {
 	background: rgba(0,0,0,.12);
 }
 
-.cont2_top{color:#ff6600; display: flex; justify-content: center; align-items: center; flex: 2;}
-.cont2_top img {width:100%; max-width: 1280px;}
-.cont2_bottom {
-	width:100%;
+/* 2. 긴 이미지가 스크롤 되는 영역 */
+.cont2_top {
+	display: flex; 
+	justify-content: center; 
+	align-items: flex-start; 
+	
+	/* 하단 바(.cont2_bottom)와 겹치도록 높이를 100%로 채우고 absolute로 띄웁니다 */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	
+	overflow-y: auto;        /* 이 안에서만 스크롤 발생 */
+	z-index: 1;              /* 하단 바보다 아래에 위치 */
+	
+	/* 중요: 내비게이션(60px)과 하단 고정 바(160px) 두께만큼 이미지 안쪽에 여백을 줍니다 */
+	padding-top: 60px;       
+	padding-bottom: 180px;   /* 이미지가 하단 바 뒤로 완전히 통과하여 스크롤 되도록 여유를 줌 */
 }
+.cont2_top img {
+	width: auto;
+	max-width: 100%;
+	height: auto;
+}
+.cont2_bottom {
+	width: 100%;
+	height: 160px;           
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 5;              /* 이미지 스크롤 영역보다 확실하게 위로 올림 */
+
+	/* ✨ 크롬 및 모던 브라우저용 블러 효과 표준 적용 */
+	background: rgba(255, 255, 255, 0.35); /* 조금 더 투명하게 조정 (0.55 -> 0.45) */
+	-webkit-backdrop-filter: blur(12px);   
+	backdrop-filter: blur(12px);           
+}
+
+/* 6. 기존 .prod_wrap의 absolute 위치 조정을 위해 높이에 맞게 정렬 */
+.prod1, .prod2 {
+	bottom: 20px;            /* 하단 여백 정렬 */
+}
+
 .prod_wrap{
 	padding-left:50px;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
 }
-.prod1 { letter-spacing: -1px; position: absolute; bottom:30px;}
+.prod1 { letter-spacing: -1px; position: absolute; bottom:20px;}
 .prod1 span:first-child { font-size: 38px; font-weight: 700; display: block;}
-.prod1 span:last-child { font-size: 30px; font-weight: 400; display: block;}
+.prod1 span:last-child { font-size: 28px; font-weight: 400; display: block;}
 .prod2 { letter-spacing: -1px; position: absolute; right:30px; bottom:30px; text-align: right;}
-.prod2 span:first-child { font-size: 34px; font-weight: 500; display: block;}
-.prod2 span:last-child { font-size: 100px; font-weight: 800; display: block; color: #e60012; line-height: 1; letter-spacing: -2px;}
+.prod2 span:first-child { font-size: 28px; font-weight: 500; display: block;}
+.prod2 span:last-child { font-size: 90px; font-weight: 800; display: block; color: #e60012; line-height: 1; letter-spacing: -2px;}
 
 
-
-/* 1920 이상일 때 */
-@media screen and (min-width: 1920px) {
-	.col_m {font-size:48px;}
-	.col_m2 {font-size:56px;}
-	.price_title{font-size: 64px;}
-	.fixman img {max-width:500px;}
-	
-}
 
 /* 1400이하일 때 */
 @media screen and (max-width: 1400px) {
@@ -211,6 +251,7 @@ html,body {
 		align-items: flex-end;
 	}
 	.cont1{
+		flex: 0 0 310px;
 		width: 100%;
 		max-width:100%;
 		flex-direction: row;
@@ -220,7 +261,7 @@ html,body {
 	.col_m { padding:0 10px 5px 10px;}
 	.cont2 {width:100%;}
 	.fixman{display: none;}
-	.price_title {border-top: none; text-align: left; margin-bottom: 15px;}
+	.price_title {border-top: none; text-align: left; margin-bottom: 15px; padding-bottom:12px}
 	
 .item_wrapper > a {
     width: calc((100% - 20px) / 3); 
