@@ -22,50 +22,52 @@ html,body {
 	width: 100%;
 	min-height: 100%;
 }
+
+.header { height:80px; background: rgba(255,255,255,.9); position: sticky; top: 0; z-index: 100;}
+.header_inner {max-width:1920px; margin: 0 auto; display: flex; flex-direction: row; justify-content: space-between; padding:0 20px;}
+.header .logo { padding-top:15px;}
+.header .logo img { height: 50px;}
+.header .menu {padding-top:30px;}
+.header .menu ul{ list-style: none;}
+.header .menu li{ display: inline-block; padding:0px 20px; border-left:1px solid #ccc; font-size:18px;}
+.header .menu li:first-child{border-left:none;}
 .list_wrap{
-	background: #f3f3f3;
+	background: #f5f5f5;
 	width: 100%;
 	min-height: 100vh;
 }
-.cont_header {
-	background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-    url("../img/Faucet.png");
-	background-size: cover;
-	background-position: bottom;
-	height:400px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.cont_body{
+	max-width: 1920px;
+    padding: 20px;
+	margin: 0 auto;
 }
-.cont_header h1 {font-size: 80px; color:#fff; text-align: center;}
-.cont_header h1 span {display: block; font-size: 32px; font-weight: 400;}
+.cont_title {display: flex; flex-direction: row; justify-content: space-between; gap:10px; padding-bottom:5px;}
+.body_title_wrap {padding:20px 0 40px 0; flex: 1;}
+.body_title_wrap h1 {font-size: 80px; }
+.body_title_wrap span {color:#666; font-size: 24px;}
+.title_img {flex:1;}
+.title_img img {width:100%; max-width:1880px;}
 .item_wrapper {
     display: flex;
-    padding: 10px 20px;
     flex-wrap: wrap;
-    max-width: 1400px;
     margin: 0 auto;
     position: relative;
-    gap: 20px; 
+    gap: 10px;
+	margin-bottom:100px;
 }
 
 .item_wrapper > a {
-    width: calc((100% - 60px) / 4); 
+    width: calc((100% - 30px) / 4); 
     display: block;
 }
 
 .item {
     background: #fff;
-    border-radius: 20px;
-    box-shadow: 
-        0 4px 6px -1px rgba(0, 0, 0, 0.05), 
-        0 10px 25px -5px rgba(0, 0, 0, 0.08);
     
     display: flex;
     flex-direction: column;
     width: 100%; /* 부모인 <a> 태그 너비에 꽉 차게 설정 */
-    padding: 20px;
+    padding: 25px;
 	
     transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
                 box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
@@ -81,7 +83,7 @@ html,body {
         0 10px 20px -10px rgba(0, 0, 0, 0.06);
 }
 .item img {}
-.item span {letter-spacing: -1px; font-size:18px; color:#666; text-align: center; line-height: 1.6;}
+.item span {letter-spacing: -1px; font-size:18px; color:#666; line-height: 1.6;}
 .item span:last-child {font-size:24px; font-weight: 800; color:#333;}
 
 .container {
@@ -221,7 +223,7 @@ html,body {
 	.price_title {border-top: none; text-align: left; margin-bottom: 15px;}
 	
 .item_wrapper > a {
-    width: calc((100% - 40px) / 3); 
+    width: calc((100% - 20px) / 3); 
     display: block;
 }
 }
@@ -237,6 +239,8 @@ html,body {
 	.price_title{font-size: 40px;}
 	.col_m {font-size: 24px}
 	.col_m2 {font-size: 28px;}
+	.body_title_wrap h1 {font-size: 60px; }
+	.body_title_wrap span {color:#666; font-size: 18px;}
 }
 
 /* 768이하일 때 */
@@ -249,8 +253,13 @@ html,body {
 	.price_title{font-size: 30px;}
 	.col_m {font-size: 20px}
 	.col_m2 {font-size: 24px; padding:0px 10px 4px 15px;}
+	.body_title_wrap{padding-bottom: 20px}
+	.body_title_wrap h1 {font-size: 50px; }
+	.body_title_wrap span {color:#666; font-size: 16px;}
+	.title_img {display: none;}
+	.item_wrapper {margin-bottom:60px;}
 .item_wrapper > a {
-    width: calc((100% - 20px) / 2); 
+    width: calc((100% - 10px) / 2); 
     display: block;
 }
 }
