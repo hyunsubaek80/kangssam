@@ -23,7 +23,15 @@ html,body {
 	min-height: 100%;
 }
 
-.header { height:80px; background: rgba(255,255,255,.9); position: sticky; top: 0; z-index: 100;}
+.header { height:80px;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	/* ✨ 크롬 및 모던 브라우저용 블러 효과 표준 적용 */
+	background: rgba(255, 255, 255, 0.5); /* 조금 더 투명하게 조정 (0.55 -> 0.45) */
+	-webkit-backdrop-filter: blur(12px);   
+	backdrop-filter: blur(12px); 
+}
 .header_inner {max-width:1920px; margin: 0 auto; display: flex; flex-direction: row; justify-content: space-between; padding:0 20px;}
 .header .logo { padding-top:15px;}
 .header .logo img { height: 50px;}
@@ -155,7 +163,6 @@ html,body {
 	display: flex;
 	flex-direction: column;
 	position: relative;
-	/* 크롬에서 자식 요소들의 높이 계산 오류를 방지하기 위해 지정 */
 	min-height: 0; 
 }
 .detail_navi {
@@ -171,7 +178,7 @@ html,body {
 .navi_content {
     position: -webkit-sticky;
     position: sticky;
-    top: 0;          /* 화면 상단에서 20px 떨어졌을 때 고정 */
+    top: 0;
     width: 100%;        /* 필요에 따라 너비 지정 (예: 200px 등) */
     display: flex;
 	justify-content: space-between;
@@ -258,6 +265,28 @@ html,body {
 		position: relative;
 		order: 1;               /* 첫 번째로 배치 */
 	}
+
+	.detail_navi {
+		position: fixed;        /* absolute에서 fixed로 변경하여 화면에 박제 */
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50px;           /* 모바일 환경에 맞는 고정 높이 지정 */
+		z-index: 100;           /* 최상단에 뜨도록 넉넉하게 설정 */
+		background: rgba(255, 255, 255, 0.9); /* 스크롤 시 뒤쪽 본문이 살짝 비치는 반투명 배경 */
+		-webkit-backdrop-filter: blur(8px);
+		backdrop-filter: blur(8px);           /* 네비게이션 바에도 고급스러운 블러 효과 적용 */
+		pointer-events: auto;   /* fixed 영역 전체가 이벤트를 받도록 복구 */
+	}
+	.navi_content {
+		position: relative;     /* sticky 해제 */
+		border-bottom: 1px solid #ddd;
+		height: 100%;
+	}
+	
+	.inner_navi {
+		padding: 14px 0 0 20px; /* 세로 중앙 정렬에 맞춰 여백 조정 */
+	}
 	.cont1 {
 		width: 100%;
 		max-width: 100%;
@@ -272,10 +301,16 @@ html,body {
 		overflow-y: visible;    /* 자체 스크롤 해제 */
 		padding-bottom: 40px;   /* 하단 여백 확보 */
 	}
+	.cont2_bottom {
+		position: relative;     /* absolute 해제하여 .cont2_top 아래에 안착 */
+		height: auto;           /* 고정 높이 해제 */
+		background: #fff;       /* 모바일에서는 블러 대신 깔끔한 흰색 배경 선호 */
+		padding: 20px 0;
+	}
+	.prod1, .prod2 {bottom:20px;}
 	.cont1_col_top{ width:33%; padding:20px;}
 	.cont1_col_bottom {padding:20px 40px 0 40px; flex:1; margin-left:33%;}
 	.col_m { padding:0 10px 5px 10px;}
-	.cont2 {width:100%;}
 	.fixman{display: none;}
 	.price_title {border-top: none; text-align: left; margin-bottom: 15px; padding-bottom:12px}
 	
@@ -302,6 +337,7 @@ html,body {
 
 /* 768이하일 때 */
 @media screen and (max-width: 768px) {
+	.cont1 {flex: 0 0 250px}
 	.prod_wrap{padding-left:20px;}
 	.prod1 span:first-child { font-size: 20px;}
 	.prod1 span:last-child { font-size: 16px;}
