@@ -355,13 +355,13 @@ html,body {
 	.col_m {font-size: 20px}
 	.col_m2 {font-size: 24px; padding:0px 10px 4px 15px;}
 	.body_title_wrap{padding-bottom: 20px}
-	.body_title_wrap h1 {font-size: 50px; }
+	.body_title_wrap h1 {font-size: 40px; }
 	.body_title_wrap span {color:#666; font-size: 16px;}
 	.title_img {display: none;}
 	.item_wrapper {margin-bottom:60px;}
-.item_wrapper > a {
-    width: calc((100% - 10px) / 2); 
-    display: block;
-}
+	.item_wrapper > a {
+		width: calc((100% - 10px) / 2); 
+		display: block;
+	}
 }
 
