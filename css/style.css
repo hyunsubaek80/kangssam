@@ -246,15 +246,31 @@ html,body {
 
 /* 1400이하일 때 */
 @media screen and (max-width: 1400px) {
-	.container{
-		flex-direction: column-reverse;
-		align-items: flex-end;
-	}
-	.cont1{
-		flex: 0 0 310px;
+	.container {
+			flex-direction: column; /* column-reverse에서 column으로 변경 */
+			align-items: stretch;   /* 너비를 100% 꽉 채우도록 변경 */
+			overflow: auto;         /* 모바일 전체 화면 스크롤이 작동하도록 허용 */
+			height: auto;           /* 고정 높이를 해제하여 내용만큼 늘어나게 함 */
+		}
+	.cont2 {
 		width: 100%;
-		max-width:100%;
+		height: auto;           /* 모바일에서는 고정 높이 해제 */
+		position: relative;
+		order: 1;               /* 첫 번째로 배치 */
+	}
+	.cont1 {
+		width: 100%;
+		max-width: 100%;
+		height: auto;           /* 고정 높이 해제 */
 		flex-direction: row;
+		order: 2;               /* 두 번째(아래)로 배치 */
+	}
+	/* 3. 모바일 환경에 맞게 내부 스크롤 및 absolute 레이아웃 해제 */
+	.cont2_top {
+		position: relative;     /* absolute 해제하여 자연스럽게 공간 차지 */
+		height: auto;
+		overflow-y: visible;    /* 자체 스크롤 해제 */
+		padding-bottom: 40px;   /* 하단 여백 확보 */
 	}
 	.cont1_col_top{ width:33%; padding:20px;}
 	.cont1_col_bottom {padding:20px 40px 0 40px; flex:1; margin-left:33%;}
