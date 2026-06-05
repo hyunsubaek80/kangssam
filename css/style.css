@@ -148,6 +148,10 @@ html,body {
 .price_title {
 	border-top:1px solid rgba(255, 255, 255, .5); border-bottom:1px solid rgba(255, 255, 255, .5); text-align: center; font-size: 44px; color:#fff; font-weight: 800; letter-spacing: -1px; padding:5px 0 5px 0;
 }
+.product_title {
+	text-align: center; font-size: 32px; color:#fff; font-weight: 500; letter-spacing: -1px; padding:15px 0 5px 0; text-overflow: ellipsis;
+}
+.sub_text {color:#fff; display: block; padding-bottom:20px;}
 .col_m {
 	font-size:28px; color: #fff; padding:5px 10px 5px 0; display: flex; justify-content: space-between;
 }
@@ -195,8 +199,8 @@ html,body {
 /* 2. 긴 이미지가 스크롤 되는 영역 */
 .cont2_top {
 	display: flex; 
-	justify-content: center; 
-	align-items: flex-start; 
+	align-items: flex-start;
+	flex-direction: column;
 	
 	/* 하단 바(.cont2_bottom)와 겹치도록 높이를 100%로 채우고 absolute로 띄웁니다 */
 	position: absolute;
@@ -216,6 +220,7 @@ html,body {
 	width: auto;
 	max-width: 100%;
 	height: auto;
+	margin: 0 auto;
 }
 .cont2_bottom {
 	width: 100%;
@@ -288,9 +293,10 @@ html,body {
 		padding: 14px 0 0 20px; /* 세로 중앙 정렬에 맞춰 여백 조정 */
 	}
 	.cont1 {
+		flex: 0 0 200px;
 		width: 100%;
 		max-width: 100%;
-		height: auto;           /* 고정 높이 해제 */
+		height:auto;
 		flex-direction: row;
 		order: 2;               /* 두 번째(아래)로 배치 */
 	}
@@ -314,6 +320,11 @@ html,body {
 	.col_m { padding:0 10px 5px 10px;}
 	.fixman{display: none;}
 	.price_title {border-top: none; text-align: left; margin-bottom: 15px; padding-bottom:12px}
+	
+	.product_title {
+		text-align: left; font-size: 32px; padding:0 0 5px 0;
+	}
+	.sub_text {font-size: 16px;}
 	
 	.item_wrapper > a {
 		width: calc((100% - 20px) / 3); 
@@ -351,7 +362,7 @@ html,body {
 	.header .menu {padding-top:25px;}
 	.header .menu li{font-size:16px; padding:0 10px;}
 	
-	.cont1 {flex: 0 0 220px}
+	.cont1 {flex: 0 0 200px}
 	.cont2_bottom {
 		height: 100px;
 		border-top: 1px solid #ddd;
@@ -373,5 +384,6 @@ html,body {
 		width: calc((100% - 10px) / 2); 
 		display: block;
 	}
+	.product_title {font-size:24px;}
 }
 
