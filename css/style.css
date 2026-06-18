@@ -734,3 +734,97 @@ html,body {
         color: #e60012; /* 브랜드 시그니처 컬러 매칭 */
     }
 }
+/* ===================================================
+   🌟 메인 페이지 전용 미니멀 푸터 (Footer) 스타일
+   =================================================== */
+
+.home_main_container .main-footer {
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #e9ecef;
+    padding: 50px 20px;
+    margin-top: auto; /* 컨텐츠가 적어도 하단에 항상 밀착 */
+}
+
+.home_main_container .footer_inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.home_main_container .footer_logo img {
+    height: 32px; /* 깔끔하고 차분한 소형 로고 세팅 */
+    width: auto;
+    filter: grayscale(100%); /* 차분한 톤앤매너를 위한 흑백 처리 */
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.home_main_container .footer_logo:hover img {
+    filter: none;
+    opacity: 0.9;
+}
+
+.home_main_container .footer_info {
+    width: 100%;
+}
+
+.home_main_container .footer_info p {
+    font-size: 14px;
+    color: #868e96;
+    line-height: 1.8;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+.home_main_container .footer_info p span {
+    margin-right: 16px;
+    position: relative;
+}
+
+/* 정보 구분선 (|) */
+.home_main_container .footer_info p span:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -9px;
+    top: 4px;
+    width: 1px;
+    height: 11px;
+    background-color: #dee2e6;
+}
+
+.home_main_container .footer_info .copy {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #adb5bd;
+}
+
+/* ===================================================
+   🌟 미니멀 푸터 반응형 미디어 쿼리 (768px 이하 모바일)
+   =================================================== */
+@media screen and (max-width: 768px) {
+    .home_main_container .main-footer {
+        padding: 35px 20px;
+    }
+    
+    .home_main_container .footer_inner {
+        gap: 20px;
+    }
+    
+    .home_main_container .footer_info p span {
+        display: block; /* 모바일 환경에서 텍스트가 겹치지 않게 줄바꿈 처리 */
+        margin-bottom: 2px;
+    }
+    
+    .home_main_container .footer_info p span:not(:last-child)::after {
+        display: none; /* 세로 정렬 시 구분 가로선 삭제 */
+    }
+    
+    .home_main_container .footer_info .copy {
+        margin-top: 12px;
+    }
+}
