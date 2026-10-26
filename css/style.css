@@ -2,7 +2,7 @@
 @charset "utf-8";
 
 /* ===================================================
-   1. 프리텐다드(Pretendard) 웹폰트 불러오기 및 초기화
+   1. ?�리?�다??Pretendard) ?�폰??불러?�기 �?초기??
    =================================================== */
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
 
@@ -10,10 +10,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* 프리텐다드 폰트를 전체 적용합니다. 만약 폰트 로드가 안 될 경우 시스템 고딕을 띄웁니다. */
+    /* ?�리?�다???�트�??�체 ?�용?�니?? 만약 ?�트 로드가 ????경우 ?�스??고딕???�웁?�다. */
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
 }
-/* <a> 태그 기본값 스타일 변경 (컬러 #000, 밑줄 제거) */
+/* <a> ?�그 기본�??��???변�?(컬러 #000, 밑줄 ?�거) */
 a {
     color: #000;
     text-decoration: none;
@@ -27,8 +27,8 @@ html,body {
 	position: sticky;
 	top: 0;
 	z-index: 100;
-	/* ✨ 크롬 및 모던 브라우저용 블러 효과 표준 적용 */
-	background: rgba(255, 255, 255, 0.5); /* 조금 더 투명하게 조정 (0.55 -> 0.45) */
+	/* ???�롬 �?모던 브라?��???블러 ?�과 ?��? ?�용 */
+	background: rgba(255, 255, 255, 0.5); /* 조금 ???�명?�게 조정 (0.55 -> 0.45) */
 	-webkit-backdrop-filter: blur(12px);   
 	backdrop-filter: blur(12px); 
 }
@@ -82,12 +82,12 @@ html,body {
     
     display: flex;
     flex-direction: column;
-    width: 100%; /* 부모인 <a> 태그 너비에 꽉 차게 설정 */
+    width: 100%; /* 부모인 <a> ?�그 ?�비??�?차게 ?�정 */
     padding: 25px;
 	
     transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
                 box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-    will-change: transform, box-shadow; /* 브라우저 최적화 */
+    will-change: transform, box-shadow; /* 브라?��? 최적??*/
 }
 
 .home .item {
@@ -95,10 +95,10 @@ html,body {
 	
 }
 .item:hover {
-    /* 위로 8px 부드럽게 이동 */
+    /* ?�로 8px 부?�럽�??�동 */
     transform: translateY(-8px); 
     
-    /* 공중에 떴을 때의 자연스럽고 깊어진 그림자 */
+    /* 공중???�을 ?�의 ?�연?�럽�?깊어�?그림??*/
     box-shadow: 
         0 20px 35px -10px rgba(0, 0, 0, 0.12), 
         0 10px 20px -10px rgba(0, 0, 0, 0.06);
@@ -116,17 +116,17 @@ html,body {
 .main-header > p {font-size:18px; color: #333;}
 .container {
 	width: 100%;
-	height: 100vh;          /* min-height 대신 딱 100vh로 고정 */
+	height: 100vh;          /* min-height ?�????100vh�?고정 */
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
-	overflow: hidden;        /* 전체 화면 밖으로 스크롤이 나가는 것을 방지 */
+	overflow: hidden;        /* ?�체 ?�면 밖으�??�크롤이 ?��???것을 방�? */
 }
 
 .cont1 {
-	flex: 0 0 450px;          /* 1 0 33% 에서 flex-grow를 0으로 변경 */
+	flex: 0 0 450px;          /* 1 0 33% ?�서 flex-grow�?0?�로 변�?*/
 	max-width: 450px;
-	height: 100%;           /* 부모(100vh) 높이를 그대로 채움 */
+	height: 100%;           /* 부�?100vh) ?�이�?그�?�?채�? */
 	background: #e60012;
 	display: flex;
 	flex-direction: column;
@@ -177,7 +177,7 @@ html,body {
 .col_m2 { background:#fff; color:red; margin:10px 0px 20px 0px; display: flex; justify-content: space-between; padding:6px 10px 8px 15px; width:100%; font-size:32px;}
 .col_m span:last-child, .col_m2 span:last-child{text-align: right; font-weight: 700; letter-spacing: -1px;}
 
-/* 1. 오른쪽 전체 영역 */
+/* 1. ?�른�??�체 ?�역 */
 .cont2 {
 	flex: 2;
 	height: 100%;           
@@ -193,8 +193,8 @@ html,body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* .cont2의 전체 높이만큼 가짜 영역을 확보 */
-    pointer-events: none; /* 뒤에 있는 이미지나 텍스트가 클릭되도록 클릭 이벤트 통과 */
+    height: 100%; /* .cont2???�체 ?�이만큼 가�??�역???�보 */
+    pointer-events: none; /* ?�에 ?�는 ?��?지???�스?��? ?�릭?�도�??�릭 ?�벤???�과 */
     z-index: 10;
 	
 }
@@ -202,10 +202,10 @@ html,body {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    width: 100%;        /* 필요에 따라 너비 지정 (예: 200px 등) */
+    width: 100%;        /* ?�요???�라 ?�비 지??(?? 200px ?? */
     display: flex;
 	justify-content: space-between;
-    pointer-events: auto; /* 내비게이션 버튼 등은 다시 클릭이 되어야 하므로 마우스 이벤트 복구 */
+    pointer-events: auto; /* ?�비게이??버튼 ?��? ?�시 ?�릭???�어???��?�?마우???�벤??복구 */
 	border-bottom: 1px solid #ddd;
     
 }
@@ -242,11 +242,11 @@ html,body {
 	width: 100%;
 	height: 100%;
 	
-	overflow-y: auto;        /* 이 안에서만 스크롤 발생 */
-	z-index: 1;              /* 하단 바보다 아래에 위치 */
+	overflow-y: auto;        /* ???�에?�만 ?�크�?발생 */
+	z-index: 1;              /* ?�단 바보???�래???�치 */
 	
-	padding-top: 60px;       
-	padding-bottom: 180px;   /* 이미지가 하단 바 뒤로 완전히 통과하여 스크롤 되도록 여유를 줌 */
+	padding-top: 50px;       
+	padding-bottom: 180px;   /* ?��?지가 ?�단 �??�로 ?�전???�과?�여 ?�크�??�도�??�유�?�?*/
 }
 .cont2_top img {
 	width: auto;
@@ -260,17 +260,17 @@ html,body {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	z-index: 5;              /* 이미지 스크롤 영역보다 확실하게 위로 올림 */
+	z-index: 5;              /* ?��?지 ?�크�??�역보다 ?�실?�게 ?�로 ?�림 */
 
-	/* ✨ 크롬 및 모던 브라우저용 블러 효과 표준 적용 */
-	background: rgba(255, 255, 255, 0.35); /* 조금 더 투명하게 조정 (0.55 -> 0.45) */
+	/* ???�롬 �?모던 브라?��???블러 ?�과 ?��? ?�용 */
+	background: rgba(255, 255, 255, 0.35); /* 조금 ???�명?�게 조정 (0.55 -> 0.45) */
 	-webkit-backdrop-filter: blur(12px);   
 	backdrop-filter: blur(12px);           
 }
 
-/* 6. 기존 .prod_wrap의 absolute 위치 조정을 위해 높이에 맞게 정렬 */
+/* 6. 기존 .prod_wrap??absolute ?�치 조정???�해 ?�이??맞게 ?�렬 */
 .prod1, .prod2 {
-	bottom: 20px;            /* 하단 여백 정렬 */
+	bottom: 20px;            /* ?�단 ?�백 ?�렬 */
 }
 
 .prod_wrap{
@@ -299,41 +299,41 @@ html,body {
 .icon_body img {width:100%;}        
 
 
-/* 1400이하일 때 */
+/* 1400?�하????*/
 @media screen and (max-width: 1400px) {
 	.container {
-			flex-direction: column; /* column-reverse에서 column으로 변경 */
-			align-items: stretch;   /* 너비를 100% 꽉 채우도록 변경 */
-			overflow: auto;         /* 모바일 전체 화면 스크롤이 작동하도록 허용 */
-			height: auto;           /* 고정 높이를 해제하여 내용만큼 늘어나게 함 */
+			flex-direction: column; /* column-reverse?�서 column?�로 변�?*/
+			align-items: stretch;   /* ?�비�?100% �?채우?�록 변�?*/
+			overflow: auto;         /* 모바???�체 ?�면 ?�크롤이 ?�동?�도�??�용 */
+			height: auto;           /* 고정 ?�이�??�제?�여 ?�용만큼 ?�어?�게 ??*/
 		}
 	.cont2 {
 		width: 100%;
-		height: auto;           /* 모바일에서는 고정 높이 해제 */
+		height: auto;           /* 모바?�에?�는 고정 ?�이 ?�제 */
 		position: relative;
-		order: 1;               /* 첫 번째로 배치 */
+		order: 1;               /* �?번째�?배치 */
 	}
 
 	.detail_navi {
-		position: fixed;        /* absolute에서 fixed로 변경하여 화면에 박제 */
+		position: fixed;        /* absolute?�서 fixed�?변경하???�면??박제 */
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 50px;           /* 모바일 환경에 맞는 고정 높이 지정 */
-		z-index: 100;           /* 최상단에 뜨도록 넉넉하게 설정 */
-		background: rgba(255, 255, 255, 0.9); /* 스크롤 시 뒤쪽 본문이 살짝 비치는 반투명 배경 */
+		height: 50px;           /* 모바???�경??맞는 고정 ?�이 지??*/
+		z-index: 100;           /* 최상?�에 ?�도�??�넉?�게 ?�정 */
+		background: rgba(255, 255, 255, 0.9); /* ?�크�????�쪽 본문???�짝 비치??반투�?배경 */
 		-webkit-backdrop-filter: blur(8px);
-		backdrop-filter: blur(8px);           /* 네비게이션 바에도 고급스러운 블러 효과 적용 */
-		pointer-events: auto;   /* fixed 영역 전체가 이벤트를 받도록 복구 */
+		backdrop-filter: blur(8px);           /* ?�비게이??바에??고급?�러??블러 ?�과 ?�용 */
+		pointer-events: auto;   /* fixed ?�역 ?�체가 ?�벤?��? 받도�?복구 */
 	}
 	.navi_content {
-		position: relative;     /* sticky 해제 */
+		position: relative;     /* sticky ?�제 */
 		border-bottom: 1px solid #ddd;
 		height: 100%;
 	}
 	
 	.inner_navi {
-		padding: 14px 0 0 20px; /* 세로 중앙 정렬에 맞춰 여백 조정 */
+		padding: 14px 0 0 20px; /* ?�로 중앙 ?�렬??맞춰 ?�백 조정 */
 	}
 	.cont1 {
 		flex: 0 0 200px;
@@ -341,19 +341,19 @@ html,body {
 		max-width: 100%;
 		height:auto;
 		flex-direction: row;
-		order: 2;               /* 두 번째(아래)로 배치 */
+		order: 2;               /* ??번째(?�래)�?배치 */
 	}
-	/* 3. 모바일 환경에 맞게 내부 스크롤 및 absolute 레이아웃 해제 */
+	/* 3. 모바???�경??맞게 ?��? ?�크�?�?absolute ?�이?�웃 ?�제 */
 	.cont2_top {
-		position: relative;     /* absolute 해제하여 자연스럽게 공간 차지 */
+		position: relative;     /* absolute ?�제?�여 ?�연?�럽�?공간 차�? */
 		height: auto;
-		overflow-y: visible;    /* 자체 스크롤 해제 */
-		padding-bottom: 40px;   /* 하단 여백 확보 */
+		overflow-y: visible;    /* ?�체 ?�크�??�제 */
+		padding-bottom: 40px;   /* ?�단 ?�백 ?�보 */
 	}
 	.cont2_bottom {
-		position: relative;     /* absolute 해제하여 .cont2_top 아래에 안착 */
-		height: 160px;           /* 고정 높이 해제 */
-		background: #fff;       /* 모바일에서는 블러 대신 깔끔한 흰색 배경 선호 */
+		position: relative;     /* absolute ?�제?�여 .cont2_top ?�래???�착 */
+		height: 160px;           /* 고정 ?�이 ?�제 */
+		background: #fff;       /* 모바?�에?�는 블러 ?�??깔끔???�색 배경 ?�호 */
 		padding: 20px 0;
 		border-top: 1px solid #ddd;
 	}
@@ -375,7 +375,7 @@ html,body {
 	}
 }
 
-/* 1024이하일 때 */
+/* 1024?�하????*/
 @media screen and (max-width: 1024px) {
 	.prod1 span:first-child { font-size: 30px;}
 	.prod1 span:last-child { font-size: 22px;}
@@ -395,7 +395,7 @@ html,body {
 	.prod1 {left:20px;}
 }
 
-/* 768이하일 때 */
+/* 768?�하????*/
 @media screen and (max-width: 768px) {
 	
 	.header { height:66px;}
@@ -430,10 +430,10 @@ html,body {
 	.product_title {font-size:24px;}
 }
 /* ===================================================
-   🌟 메인 페이지 전용 트렌디 UI 개편 (서브페이지 영향 없음)
+   ?�� 메인 ?�이지 ?�용 ?�렌??UI 개편 (?�브?�이지 ?�향 ?�음)
    =================================================== */
 
-/* 메인 페이지 전체 백그라운드 격리 */
+/* 메인 ?�이지 ?�체 백그?�운??격리 */
 .home_main_container {
     background-color: #f8f9fa;
     width: 100%;
@@ -443,7 +443,7 @@ html,body {
     align-items: center;
 }
 
-/* 모던 히어로 헤더 디자인 */
+/* 모던 ?�어�??�더 ?�자??*/
 .home_main_container .main-header {
     display: flex;
     flex-direction: column;
@@ -452,7 +452,7 @@ html,body {
     padding: 60px 20px 40px 20px;
     width: 100%;
     max-width: 1200px;
-    border-bottom: none; /* 기존 border 제거 */
+    border-bottom: none; /* 기존 border ?�거 */
 }
 
 .home_main_container .main-header .logo {
@@ -487,7 +487,7 @@ html,body {
     line-height: 1.6;
 }
 
-/* 컨텐츠 영역 제한 */
+/* 컨텐�??�역 ?�한 */
 .home_main_container .cont_body.home {
     width: 100%;
     max-width: 1200px;
@@ -495,7 +495,7 @@ html,body {
     margin: 0 auto;
 }
 
-/* 그리드 시스템으로 메인 카드 정렬 */
+/* 그리???�스?�으�?메인 카드 ?�렬 */
 .home_main_container .home .item_wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -504,7 +504,7 @@ html,body {
     margin: 0;
 }
 
-/* 카드 기본 스타일 초기화 및 개편 */
+/* 카드 기본 ?��???초기??�?개편 */
 .home_main_container .item_card {
     display: block;
     width: 100% !important;
@@ -527,7 +527,7 @@ html,body {
     will-change: transform, box-shadow;
 }
 
-/* 메인 상품 이미지 정렬 */
+/* 메인 ?�품 ?��?지 ?�렬 */
 .home_main_container .item .img_box {
     flex: 1;
     display: flex;
@@ -544,7 +544,7 @@ html,body {
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* 메인 텍스트 영역 */
+/* 메인 ?�스???�역 */
 .home_main_container .item .info_box {
     width: 100%;
     text-align: left;
@@ -568,7 +568,7 @@ html,body {
     letter-spacing: -0.5px;
 }
 
-/* 바로가기 화살표 아이콘 */
+/* 바로가�??�살???�이�?*/
 .home_main_container .item .arrow_icon {
     position: absolute;
     right: 30px;
@@ -585,7 +585,7 @@ html,body {
     transition: all 0.3s ease;
 }
 
-/* 🌟 마우스 오버 반응형 인터랙션 */
+/* ?�� 마우???�버 반응???�터?�션 */
 .home_main_container .item_card:hover .item {
     transform: translateY(-10px);
     border-color: rgba(230, 0, 18, 0.15);
@@ -602,7 +602,7 @@ html,body {
 }
 
 /* ===================================================
-   🌟 메인 페이지 전용 반응형 미디어 쿼리
+   ?�� 메인 ?�이지 ?�용 반응??미디??쿼리
    =================================================== */
 @media screen and (max-width: 1400px) {
     .home_main_container .home .item_wrapper {
@@ -631,24 +631,24 @@ html,body {
     }
 }
 /* ===================================================
-   🌟 서브페이지 전용 모바일 햄버거 메뉴 스타일 (격리 완료)
+   ?�� ?�브?�이지 ?�용 모바???�버�?메뉴 ?��???(격리 ?�료)
    =================================================== */
 
-/* 기본 상태에서 모바일 전용 요소 감추기 */
+/* 기본 ?�태?�서 모바???�용 ?�소 감추�?*/
 .sub_page_container .hamburger_btn,
 .sub_page_container .mobile_menu_header {
     display: none;
 }
 
-/* 768px 이하 모바일 환경 최적화 브레이크포인트 */
+/* 768px ?�하 모바???�경 최적??브레?�크?�인??*/
 @media screen and (max-width: 768px) {
-    /* 헤더 내부 정렬 조율 */
+    /* ?�더 ?��? ?�렬 조율 */
     .sub_page_container .header_inner {
         align-items: center;
         position: relative;
     }
 
-    /* 햄버거 토글 버튼 등장 */
+    /* ?�버�??��? 버튼 ?�장 */
     .sub_page_container .hamburger_btn {
         display: block;
         background: none;
@@ -657,16 +657,16 @@ html,body {
         color: #333;
         cursor: pointer;
         padding: 5px;
-        margin-top: 5px; /* 기존 padding-top 레이아웃 싱크 조절 */
+        margin-top: 5px; /* 기존 padding-top ?�이?�웃 ?�크 조절 */
     }
 
-    /* 기존 가로 정렬 메뉴를 세로형 사이드 슬라이드 메뉴로 전면 개편 */
+    /* 기존 가�??�렬 메뉴�??�로???�이???�라?�드 메뉴�??�면 개편 */
     .sub_page_container .menu {
-        display: block; /* inline-block 해제 */
+        display: block; /* inline-block ?�제 */
         position: fixed;
         top: 0;
-        right: -100%; /* 우측 바깥에 숨김 */
-        width: 75%; /* 화면의 75% 차지 */
+        right: -100%; /* ?�측 바깥???��? */
+        width: 75%; /* ?�면??75% 차�? */
         max-width: 320px;
         height: 100vh;
         background: #ffffff;
@@ -676,12 +676,12 @@ html,body {
         transition: right 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    /* 메뉴가 활성화 되었을 때 안으로 슬라이딩 */
+    /* 메뉴가 ?�성???�었?????�으�??�라?�딩 */
     .sub_page_container .menu.active {
         right: 0;
     }
 
-    /* 모바일 내부 헤더 세팅 */
+    /* 모바???��? ?�더 ?�팅 */
     .sub_page_container .mobile_menu_header {
         display: flex;
         justify-content: space-between;
@@ -700,14 +700,14 @@ html,body {
         padding: 5px;
     }
 
-    /* 리스트 스타일 세로형으로 변경 */
+    /* 리스???��????�로?�으�?변�?*/
     .sub_page_container .menu ul {
         display: flex;
         flex-direction: column;
         gap: 0;
     }
 
-    /* 기존 가로 보더 라인 제거 및 모바일용 메뉴 가독성 확보 */
+    /* 기존 가�?보더 ?�인 ?�거 �?모바?�용 메뉴 가?�성 ?�보 */
     .sub_page_container .menu li {
         display: block;
         padding: 15px 10px;
@@ -728,14 +728,14 @@ html,body {
         transition: color 0.2s ease;
     }
 
-    /* 링크 터치 포인트 강조 */
+    /* 링크 ?�치 ?�인??강조 */
     .sub_page_container .menu li a:hover,
     .sub_page_container .menu li a:active {
-        color: #e60012; /* 브랜드 시그니처 컬러 매칭 */
+        color: #e60012; /* 브랜???�그?�처 컬러 매칭 */
     }
 }
 /* ===================================================
-   🌟 메인 페이지 전용 미니멀 푸터 (Footer) 스타일
+   ?�� 메인 ?�이지 ?�용 미니멀 ?�터 (Footer) ?��???
    =================================================== */
 
 .home_main_container .main-footer {
@@ -743,7 +743,7 @@ html,body {
     background-color: #ffffff;
     border-top: 1px solid #e9ecef;
     padding: 50px 20px;
-    margin-top: auto; /* 컨텐츠가 적어도 하단에 항상 밀착 */
+    margin-top: auto; /* 컨텐츠�? ?�어???�단????�� 밀�?*/
 }
 
 .home_main_container .footer_inner {
@@ -757,9 +757,9 @@ html,body {
 }
 
 .home_main_container .footer_logo img {
-    height: 32px; /* 깔끔하고 차분한 소형 로고 세팅 */
+    height: 32px; /* 깔끔?�고 차분???�형 로고 ?�팅 */
     width: auto;
-    filter: grayscale(100%); /* 차분한 톤앤매너를 위한 흑백 처리 */
+    filter: grayscale(100%); /* 차분???�앤매너�??�한 ?�백 처리 */
     opacity: 0.5;
     transition: all 0.3s ease;
 }
@@ -786,7 +786,7 @@ html,body {
     position: relative;
 }
 
-/* 정보 구분선 (|) */
+/* ?�보 구분??(|) */
 .home_main_container .footer_info p span:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -804,7 +804,7 @@ html,body {
 }
 
 /* ===================================================
-   🌟 미니멀 푸터 반응형 미디어 쿼리 (768px 이하 모바일)
+   ?�� 미니멀 ?�터 반응??미디??쿼리 (768px ?�하 모바??
    =================================================== */
 @media screen and (max-width: 768px) {
     .home_main_container .main-footer {
@@ -816,12 +816,12 @@ html,body {
     }
     
     .home_main_container .footer_info p span {
-        display: block; /* 모바일 환경에서 텍스트가 겹치지 않게 줄바꿈 처리 */
+        display: block; /* 모바???�경?�서 ?�스?��? 겹치지 ?�게 줄바�?처리 */
         margin-bottom: 2px;
     }
     
     .home_main_container .footer_info p span:not(:last-child)::after {
-        display: none; /* 세로 정렬 시 구분 가로선 삭제 */
+        display: none; /* ?�로 ?�렬 ??구분 가로선 ??�� */
     }
     
     .home_main_container .footer_info .copy {
