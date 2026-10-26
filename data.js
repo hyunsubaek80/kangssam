@@ -364,7 +364,7 @@ const productData = {
     },
 
     // ==========================================
-    // 3. 세면 수전 (10종)
+    // 3. 세면 수전
     // ==========================================
 "p01-k300": {
         categoryName: "수전",
@@ -617,6 +617,23 @@ const productData = {
         descHtml: `
             <div class="prod_wrap">
                 <div class="prod1"><span>대림바스 DL-L6010</span><span>모던한 감성과 뛰어난 내구성을 지닌<br>하이엔드 원홀 겸용샤워 수전</span></div>
+                <div class="prod2"><span>판매가격</span><span>80,000</span></div>
+            </div>
+        `
+    },
+    "p16-L4210": {
+        categoryName: "수전",
+        categoryLink: "faucet.html",
+        priceHtml: `
+            <div class="col_m"><span>ㆍ제품가</span><span>90,000원</span></div>
+            <div class="col_m"><span>ㆍ출장비</span><span>10,000원</span></div>
+            <div class="col_m"><span>ㆍ설치공임</span><span>30,000원</span></div>
+            <div class="col_m2"><span>총 비용</span><span>130,000원</span></div>
+        `,
+        images: ["img/4210_1.jpg", "img/4210_2.webp"],
+        descHtml: `
+            <div class="prod_wrap">
+                <div class="prod1"><span>대림바스 DL-L4210</span><span>모던한 감성과 뛰어난 내구성을 지닌<br>하이엔드 원홀 겸용샤워 수전</span></div>
                 <div class="prod2"><span>판매가격</span><span>80,000</span></div>
             </div>
         `
