@@ -633,7 +633,7 @@ const productData = {
         images: ["img/4210_1.jpg", "img/4210_2.webp"],
         descHtml: `
             <div class="prod_wrap">
-                <div class="prod1"><span>대림바스 DL-L4210</span><span>모던한 감성과 뛰어난 내구성을 지닌<br>하이엔드 원홀 겸용샤워 수전</span></div>
+                <div class="prod1"><span>대림바스 DL-L4210</span><span>심플함 속에 감성과 뛰어난 내구성을 지닌<br>하이엔드 원홀 겸용샤워 수전</span></div>
                 <div class="prod2"><span>판매가격</span><span>80,000</span></div>
             </div>
         `
