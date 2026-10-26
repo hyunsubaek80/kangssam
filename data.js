@@ -866,9 +866,9 @@ const productData = {
     },
 
     // ==========================================
-    // 5. 샤워 수전 (9종)
+    // 5. 샤워 수전
     // ==========================================
-    "s04-s200": {
+    "s02-k501": {
         categoryName: "수전",
         categoryLink: "faucet.html",
         priceHtml: `
@@ -877,10 +877,27 @@ const productData = {
             <div class="col_m"><span>ㆍ설치공임</span><span>30,000원</span></div>
             <div class="col_m2"><span>총 비용</span><span>100,000원</span></div>
         `,
-        images: ["img/ST-200.png"],
+        images: ["img/K501.png"],
         descHtml: `
             <div class="prod_wrap">
-                <div class="prod1"><span>대정워터스 ST-200</span><span>안정적인 수압과 뛰어난 내구성을 자랑하는<br>국산 실속형 욕실 샤워수전</span></div>
+                <div class="prod1"><span>케이앤씨 K-501</span><span>안정적인 수압과 뛰어난 내구성을 자랑하는<br>국산 실속형 욕실 샤워수전</span></div>
+                <div class="prod2"><span>판매가격</span><span>60,000</span></div>
+            </div>
+        `
+    },
+    "s03-k2002": {
+        categoryName: "수전",
+        categoryLink: "faucet.html",
+        priceHtml: `
+            <div class="col_m"><span>ㆍ제품가</span><span>60,000원</span></div>
+            <div class="col_m"><span>ㆍ출장비</span><span>10,000원</span></div>
+            <div class="col_m"><span>ㆍ설치공임</span><span>30,000원</span></div>
+            <div class="col_m2"><span>총 비용</span><span>100,000원</span></div>
+        `,
+        images: ["img/K2002.png"],
+        descHtml: `
+            <div class="prod_wrap">
+                <div class="prod1"><span>케이앤씨 KNC-2002</span><span>안정적인 수압과 뛰어난 내구성을 자랑하는<br>국산 실속형 욕실 샤워수전</span></div>
                 <div class="prod2"><span>판매가격</span><span>60,000</span></div>
             </div>
         `
