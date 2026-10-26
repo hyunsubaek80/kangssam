@@ -945,7 +945,7 @@ const productData = {
             <div class="col_m"><span>ㆍ설치공임</span><span>30,000원</span></div>
             <div class="col_m2"><span>총 비용</span><span>160,000원</span></div>
         `,
-        images: ["img/b3013.png"],
+        images: ["img/B3013.png"],
         descHtml: `
             <div class="prod_wrap">
                 <div class="prod1"><span>대림바스 DL-B3013</span><span>군더더기 없는 모던함과 견고함을 담은<br>대림바스 고급 샤워 욕조수전</span></div>
@@ -1013,7 +1013,7 @@ const productData = {
             <div class="col_m"><span>ㆍ설치공임</span><span>60,000원</span></div>
             <div class="col_m2"><span>총 비용</span><span>320,000원</span></div>
         `,
-        images: ["img/B3011.png"],
+        images: ["img/b3011.png"],
         descHtml: `
             <div class="prod_wrap">
                 <div class="prod1"><span>대림바스 DL-B3011</span><span>호텔 욕실 같은 분위기를 완성해 주는<br>대림바스 럭셔리 레인 샤워수전</span></div>
